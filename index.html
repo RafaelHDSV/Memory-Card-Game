@@ -141,17 +141,29 @@
     <script>
         let card = document.querySelectorAll('.card img')
         let characters = ['ricky', 'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty']
+        let random
+        let confirmRandom = []
 
-        for (let i = 0; i < card.length; i++) {
-            card[i].addEventListener('click', () => {
-                // card[i].style.display = 'none'
-            })
-        }
+        // for (let i = 0; i < card.length; i++) {
+        //     card[i].addEventListener('click', () => {
+        //         card[i].style.display = 'none'
+        //     })
+        // }
 
         function shuffle() {
             for (let i = 0; i < card.length; i++) {
-                let random = Math.floor(Math.random() * 17)
+                do {
+                    random = Math.floor(Math.random() * 17)
+                    confirmRandom.push(random)
+                }  while (confirmRandom.includes(random) == false)
+
+                // let random = Math.floor(Math.random() * 17)
+                // confirmRandom.push(random)
+
+
                 console.log(random);
+                console.log(confirmRandom);
+
                 card[i].src = `images/${characters[random]}.jpeg`
             }
         }
