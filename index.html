@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rafael Henrique de Sousa Vieira">
+    <meta name="keywords"
+        content="programação, html, css, javascript, Memory Card Game, Rafael Henrique de Sousa Vieira, Frontend, Front, end">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="The memory game is a classic game made up of pieces that have a figure on one side. Each figure is repeated in two different pieces. To start the game, the pieces are placed face down so that they cannot be seen.">
+    <link rel="icon" type="image.png" sizes="32x32" href="images/icon.png">
+
+    <title>Memory Card Game</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 100%;
+            min-height: 100vh;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            column-gap: 2rem;
+            row-gap: 2rem;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            width: 8rem;
+            height: 12rem;
+            border-radius: 1rem;
+            transition: 1s all ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card img {
+            border-radius: 1rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            user-select: none;
+            -webkit-user-drag: none;
+            transition: .5s all ease;
+        }
+
+        .card img:hover {
+            opacity: .7;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Memory Card Game</h1> -->
+
+    <main>
+        <div class="card">
+            <img src="images/ricky.jpeg" alt="ricky.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/ricky.jpeg" alt="ricky.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/morty.jpeg" alt="morty.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/morty.jpeg" alt="morty.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/summer.jpeg" alt="summer.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/summer.jpeg" alt="summer.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/beth.jpeg" alt="beth.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/beth.jpeg" alt="beth.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/jerry.jpeg" alt="jerry.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/jerry.jpeg" alt="jerry.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/cops.jpeg" alt="cops.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/cops.jpeg" alt="cops.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/dr_wong.jpeg" alt="dr_wong.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/dr_wong.jpeg" alt="dr_wong.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/evil_morty.jpeg" alt="evil_morty.jpeg">
+        </div>
+
+        <div class="card">
+            <img src="images/evil_morty.jpeg" alt="evil_morty.jpeg">
+        </div>
+    </main>
+
+    <script>
+        let card = document.querySelectorAll('.card img')
+        let characters = ['ricky', 'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty']
+
+        for (let i = 0; i < card.length; i++) {
+            card[i].addEventListener('click', () => {
+                // card[i].style.display = 'none'
+            })
+        }
+
+        function shuffle() {
+            for (let i = 0; i < card.length; i++) {
+                let random = Math.floor(Math.random() * 17)
+                console.log(random);
+                card[i].src = `images/${characters[random]}.jpeg`
+            }
+        }
+
+        shuffle()
+    </script>
+</body>
+
+</html>
