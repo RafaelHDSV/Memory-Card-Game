@@ -144,21 +144,19 @@
         let characters = ['ricky', 'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty', 'ricky',
             'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty'
         ]
-        let confirmRandom = []
 
         function shuffle() {
             for (let i = 0; i < card.length; i++) {
                 card[i].style.opacity = '0'
             }
 
+
             for (let i = 0; i < card.length; i++) {
-                let random = Math.floor(Math.random() * 17)
-                confirmRandom.push(random)
+                const random = characters.sort(() => Math.random() - 0.5)
 
-                console.log(random);
-                console.log(confirmRandom);
-
-                card[i].src = `images/${characters[random]}.jpeg`
+                for (let i = 0; i < random.length; i++) {
+                    card[i].src = `images/${random[i]}.jpeg`
+                }
             }
         }
 
