@@ -15,64 +15,7 @@
 
     <title>Memory Card Game</title>
 
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-width: 100%;
-            min-height: 100vh;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            column-gap: 2rem;
-            row-gap: 2rem;
-        }
-
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            border: 1px solid black;
-            width: 8rem;
-            height: 12rem;
-            border-radius: 1rem;
-            transition: 1s all ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .card img {
-            border-radius: 1rem;
-            border: 1px solid black;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            user-select: none;
-            -webkit-user-drag: none;
-            transition: .5s all ease;
-        }
-
-        /* .card:hover {
-            opacity: .7;
-        } */
-
-        .same {
-            filter: grayscale(1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -145,62 +88,7 @@
         </div>
     </main>
 
-    <script>
-        let card = document.querySelectorAll('.card img')
-        let characters = ['ricky', 'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty']
-        let card1 = ''
-        let card2 = ''
-
-        function shuffle() {
-            card1 = ''
-            card2 = ''
-
-            const duplicatedCharacters = [...characters, ...characters]
-
-            for (let i = 0; i < card.length; i++) {
-                card[i].style.opacity = '0'
-                card[i].classList.remove('same')
-            }
-
-            for (let i = 0; i < card.length; i++) {
-                const random = duplicatedCharacters.sort(() => Math.random() - 0.5)
-
-                for (let i = 0; i < random.length; i++) {
-                    card[i].src = `images/${random[i]}.jpeg`
-                }
-            }
-        }
-
-        for (let i = 0; i < card.length; i++) {
-            card[i].addEventListener('click', () => {
-                card[i].style.opacity = '100%'
-
-                if (card1 == '') {
-                    card1 = card[i].src
-                    card1Number = i
-                } else if (card1 != '' && card2 == '') {
-                    card2 = card[i].src
-                    card2Number = i
-
-                    if (card1 == card2) {
-                        card1 = ''
-                        card2 = ''
-                        card[card1Number].classList.add('same')
-                        card[card2Number].classList.add('same')
-                    }
-
-                    if (card1 != card2) {
-                        card1 = ''
-                        card2 = ''
-                        setTimeout(() => {
-                            card[card1Number].style.opacity = '0'
-                            card[card2Number].style.opacity = '0'
-                        }, 500)
-                    }
-                }
-            })
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
