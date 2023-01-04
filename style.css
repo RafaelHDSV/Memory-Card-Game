@@ -23,6 +23,7 @@ body {
     align-items: center;
     min-width: 100%;
     min-height: 100vh;
+    background-color: var(--black);
 }
 
 .start_game {
@@ -141,7 +142,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(to top, var(--yellow), var(--blue));
     border: 1px solid black;
     width: 8rem;
     height: 12rem;
@@ -164,5 +165,5 @@ main {
 }
 
 .same {
-    filter: grayscale(1);
+    filter: blur(.3rem);
 }
