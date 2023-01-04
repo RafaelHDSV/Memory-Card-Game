@@ -79,8 +79,8 @@ body {
 
 .start_game .element1 {
     position: absolute;
-    top: 1rem;
-    left: .2rem;
+    top: .1rem;
+    left: 10rem;
     max-width: 30rem;
     width: 100%;
     transform: rotate(-20deg);
@@ -102,6 +102,31 @@ body {
     max-width: 30rem;
     width: 100%;
     border-radius: 30rem;
+}
+
+.start_game .element4 {
+    position: absolute;
+    bottom: .6rem;
+    left: 75rem;
+    max-width: 10rem;
+    width: 100%;
+    border-radius: 0 0 10rem 10rem;
+}
+
+.start_game .element5 {
+    position: absolute;
+    bottom: .6rem;
+    right: 75rem;
+    max-width: 10rem;
+    width: 100%;
+}
+
+.start_game .element6 {
+    position: absolute;
+    bottom: 3rem;
+    left: 1rem;
+    max-width: 25rem;
+    width: 100%;
 }
 
 main {
