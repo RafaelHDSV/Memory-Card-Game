@@ -1,9 +1,12 @@
+let startGame = document.querySelector('.start_game')
 let card = document.querySelectorAll('.card img')
 let characters = ['ricky', 'morty', 'summer', 'beth', 'jerry', 'cops', 'dr_wong', 'evil_morty']
 let card1 = ''
 let card2 = ''
 
 function shuffle() {
+    startGame.style.display = 'none'
+
     card1 = ''
     card2 = ''
 
