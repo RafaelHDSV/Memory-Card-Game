@@ -36,8 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: URL SOLUTION HERE
-- Live Site URL: URL SITE HERE
+- Live Site URL: https://memory-card-game-rafael.netlify.app
 
 ### Screenshot
 
@@ -47,7 +46,7 @@ Users should be able to:
     
   - Mobile
     
-    <img src="images/desktop.png" alt="desktop.png" width="300px" height="700px">
+    <img src="images/desktop.png" alt="desktop.png" width="300px">
 
 ## My process
 
