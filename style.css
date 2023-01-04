@@ -26,19 +26,27 @@ body {
 }
 
 .start_game {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    max-width: 100%;
+    max-height: 100vh;
     width: 100%;
     height: 100vh;
     background-color: var(--black);
-    color: var(--white);
     font-weight: 700;
     text-transform: uppercase;
     z-index: 1;
+}
+
+.start_game h1 {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 .start_game button {
@@ -47,11 +55,53 @@ body {
     padding: 1rem 3rem;
     background-color: var(--black);
     color: var(--white);
+    font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
     border-radius: 1rem;
     cursor: pointer;
-    transition: .5s all ease-in-out;
+    transition: .5s all ease-out;
+}
+
+.start_game button:hover {
+    font-weight: 700;
+    background: linear-gradient(to top, var(--green), var(--yellow));
+    box-shadow: 0px 0px 15px 0px var(--blue);
+    transform: scale(1.2);
+}
+
+.start_game .portal {
+    position: absolute;
+    max-width: 33rem;
+    width: 100%;
+    z-index: -1;
+}
+
+.start_game .element1 {
+    position: absolute;
+    top: 1rem;
+    left: .2rem;
+    max-width: 30rem;
+    width: 100%;
+    transform: rotate(-20deg);
+}
+
+.start_game .element2 {
+    position: absolute;
+    bottom: 1rem;
+    right: .2rem;
+    max-width: 30rem;
+    width: 100%;
+    transform: rotate(30deg);
+}
+
+.start_game .element3 {
+    position: absolute;
+    top: 1rem;
+    right: 10rem;
+    max-width: 30rem;
+    width: 100%;
+    border-radius: 30rem;
 }
 
 main {
