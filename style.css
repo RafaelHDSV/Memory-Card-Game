@@ -167,3 +167,14 @@ main {
 .same {
     filter: blur(.3rem);
 }
+
+/* board22 visit-count */
+footer #va-visits, .attribution #va-visits {
+  color: inherit;
+  font-size: inherit;
+  margin-top: 0.25rem;
+}
+
+/* board22 memory contrast */
+footer, .attribution, footer #va-visits, .attribution #va-visits { color: #fff; }
+footer a, .attribution a { color: #c4b5fd; }
